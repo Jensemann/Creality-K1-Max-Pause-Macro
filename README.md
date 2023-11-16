@@ -51,7 +51,7 @@ To access the Mainsail Web Interface, just use your printer's IP address with po
 
 ## Open printer.cfg
 
-Select Machine:
+Select Machine Menu (left side, last entry):
 
 ![Screenshot of a Mainsail UI](Mainsail_machine.png)
 
