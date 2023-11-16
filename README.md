@@ -184,6 +184,15 @@ gcode:
 
 ```
 
+# TEST
+
+Save the printer.cfg, and restart. You can also press save & restart on the upper right of the site. 
+Now, load the sample .gcode below to your printer (try drag & drop on the mainsail site!), and give it a try! This is sliced for a K1 Max. *Should* work for a K1, too, except that the cube will not be in the center of the printing bed. If you want to try it by yourself, slice the stl, and add a "M0" before layer:25 in the .gcode as described above.
+
+If everything works, you should get half of a cube, and the print paused at Layer 25. You can use the touchscreen to continue, or issue the macro RESUME_NOW in the maisail macro section.
+
+DONE.
+
 # Sample STL + GCODE
 
 [Sample STL](pause_sample_creality_print.stl)
