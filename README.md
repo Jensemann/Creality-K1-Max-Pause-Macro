@@ -1,24 +1,18 @@
 # Creality-K1-Max-Pause-Macro
-Implementation of M0 / PAUSE / RESUME macros für Creality K1 Max
 
 ## Purpose
-this instrution will describe how to implement the required macros for the Creality Ka / K1 Max printers, to be able to PAUSE and RESUME a print!
+This instrution will describe how to implement the required macros for the Creality K1 / K1 Max printers to be able to PAUSE and RESUME a print from GCODE, or from the Klipper UI like Mainsail.
 
 ## How it works
-the K1 and K1 Max use Klipper as a software basis. therefore, we can use standard GCODE commands to implement a PAUSE functionality.
+The K1 and K1 Max 3d printers are based on Klipper as a software. Klipper support several gcode commands, but does not implement [every possible g Code command](https://www.klipper3d.org/G-Codes.html). Therefore, we need to extend the GCODE commands to implement a PAUSE functionality.
 
-this documentation will use the implementation of M0 (unconditionally pause). 
+To do this, we will implement the M0 gcode command [=unconditionally pause](https://marlinfw.org/docs/gcode/M000-M001.html). 
+Once in place, wherever the M0 is inserted in a given GCODE, the printer will pause printing by executing our macro, move the printer head out of the way, and pause the print. 
 
-wherever the M0 is inserted in a given GCODE, the printer will stop printing, move the printer head to the rear right edge of the printer bed, and pause the print. 
-
-i suggest to insert the command before a new layer of a given print.
-
-now it is possible to exchange the filament, or insert parts into you current print.
-
-whenever ready, the print can be continued with macro RESUME_NOW, or use the Touchscreen and select continue.
+A pause command can be used before test start of a new layer of a given print, for example. THen it is possible to exchange the filament, or insert parts into you current print or whatever needs to be done. Whenever ready, the print can be continued with macro RESUME_NOW, or use the Touchscreen and select continue.
 
 ## Limitations
-While i write this instructions, creality print will not insert gcode to PAUSE a print, neither M0 nor M600.
+While i write this instructions, creality print will not insert gcode to PAUSE a print, neither [M0](https://marlinfw.org/docs/gcode/M000-M001.html) nor [M600](https://marlinfw.org/docs/gcode/M600.html), even if the [software has such a function in place](https://www.reddit.com/r/crealityk1/comments/143svlm/anyone_try_out_filament_change_with_creality_print/?rdt=53952).
 
 ## How to insert PAUSE in a print
 ### Slicer
