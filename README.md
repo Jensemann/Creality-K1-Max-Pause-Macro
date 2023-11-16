@@ -97,6 +97,9 @@ MACRO code to be inserted before SAVE_CONFIG:
 gcode:
   PAUSE
 
+[gcode_macro M600]
+gcode:
+  PAUSE
 
 [gcode_macro RESUME_NOW]
 gcode:
