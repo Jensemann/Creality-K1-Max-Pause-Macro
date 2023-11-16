@@ -59,12 +59,14 @@ Select System:
 ## Edit printer.cfg
 
 Open printer.cfg by clicking on it:
+
 ![Screenshot of a Mainsail UI](mainsail_printer.cfg.png)
 
 WARNING: Be careful with your printer.cfg. Consider making a copy of you current version and dowload it to your client, so you can go back anytime.
 The mainsail ui will do that for you upon saving a new file version, too. You will find copies of older versions in the same folder.
 
 Go to the very end of your printer.cfg, until you find similar code like this:
+
 ![Screenshot of a Mainsail UI](mainsail_printer.cfg2.png)
 
 ## Add Macro Code
@@ -89,7 +91,7 @@ Now, add the macro code block (see below) above the line <--- SAFE_CONFIG ---> :
 
 MACRO code to be inserted before SAVE_CONFIG:
 ```
-### ------------------------------------------ PAUSE START -----------------------------------
+### ------------------------------------------ PAUSE MACROS START -----------------------------------
 
 [gcode_macro M0]
 gcode:
@@ -175,6 +177,8 @@ gcode:
     {action_respond_info("Extruder not hot enough")}
   {% endif %}  
   RESUME_BASE {get_params}
+### ------------------------------------------ PAUSE MACROS END -----------------------------------
+
 ```
 
 # Sample STL + GCODE
@@ -199,7 +203,3 @@ M204 S894
 SET_VELOCITY_LIMIT ACCEL_TO_DECEL=447
 ;TYPE:WALL-INNER
 ...
-
-
-
-
