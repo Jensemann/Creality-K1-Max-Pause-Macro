@@ -2,7 +2,39 @@
 Implementation of M0 / PAUSE / RESUME macros für Creality K1 Max
 
 ## Purpose
-this repository will describe, how to implement the required macros for the Creality Ka / K1 Max printers, to be able to PAUSE and RESUME a print !
+this instrution will describe how to implement the required macros for the Creality Ka / K1 Max printers, to be able to PAUSE and RESUME a print!
+
+## How it works
+the K1 and K1 Max use Klipper as a software basis. therefore, we can use standard GCODE commands to implement a PAUSE functionality.
+
+this documentation will use the implementation of M0 (unconditionally pause). 
+
+wherever the M0 is inserted in a given GCODE, the printer will stop printing, move the printer head to the rear right edge of the printer bed, and pause the print. 
+
+i suggest to insert the command before a new layer of a given print.
+
+now it is possible to exchange the filament, or insert parts into you current print.
+
+whenever ready, the print can be continued with macro RESUME_NOW, or use the Touchscreen and select continue.
+
+## Limitations
+While i write this instructions, creality print will not insert gcode to PAUSE a print, neither M0 nor M600.
+
+## How to insert PAUSE in a print
+### Slicer
+
+### Prusa Tool
+
+### Manual GCODE edit
+open your gcode file using a text editor. i recommend to use Notepad++.
+search for gcode "layer", and find the right layer number where you want to add the pause.
+
+insert:
+...
+M0
+...
+
+save gcode and upload the file to your printer.
 
 ## Requirements
 - A Creality K1 / K1 Max
