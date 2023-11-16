@@ -3,6 +3,9 @@
 ## Purpose
 This instrution will describe how to implement the required macros for the Creality K1 / K1 Max printers to be able to PAUSE and RESUME a print from GCODE, or from the Klipper UI like Mainsail.
 
+## Disclaimer
+All changes you apply will be at your own risk.
+
 ## How it works
 The K1 and K1 Max 3d printers are based on Klipper as a software. Klipper support several gcode commands, but does not implement [every possible g Code command](https://www.klipper3d.org/G-Codes.html). Therefore, we need to extend the GCODE commands to implement a PAUSE functionality.
 
@@ -42,14 +45,14 @@ You need
 
 # Installation
 
-## Access Printer UI
+## Access Printer Webinterface
 
 Access your printer's [web interface](https://github.com/Guilouz/Creality-K1-and-K1-Max/wiki/Access-to-Web-Interface)
 To access the Mainsail Web Interface, just use your printer's IP address with port 4409 in your Web browser such as: http://xxx.xxx.xxx.xxx:4409/ (replacing xxx.xxx.xxx.xxx by your local IP address).
 
 ![Screenshot of a Mainsail UI](mainsail_ui.png)
 
-## Open printer.cfg
+## Open Config File printer.cfg
 
 Select Machine Menu (left side, last entry):
 
