@@ -13,10 +13,24 @@ this repository will describe, how to implement the required macros for the Crea
 
 Access your printer's [web interface](https://github.com/Guilouz/Creality-K1-and-K1-Max/wiki/Access-to-Web-Interface)
 To access to the original Mainsail Web Interface, just use your printer's IP address with port 4409 in your Web browser such as: http://xxx.xxx.xxx.xxx:4409/ (replacing xxx.xxx.xxx.xxx by your local IP address).
-Go to 
+Go to the very end of your printer.cfg.
 
+Find this section:
+...
+#*# <---------------------- SAVE_CONFIG ---------------------->
+#*# DO NOT EDIT THIS BLOCK OR BELOW. The contents are auto-generated.
+#*#
+#*# [input_shaper]
+#*# shaper_type_y = zv
+#*# shaper_freq_y = 43.2
+#*# shaper_type_x = zv
+#*# shaper_freq_x = 47.4
+#*#
+...
 
-Some basic Git commands are:
+add the following code BEFORE the section 
+
+MACRO code:
 ```
 ### ------------------------------------------ PAUSE START -----------------------------------
 
@@ -105,7 +119,5 @@ gcode:
   {% endif %}  
   RESUME_BASE {get_params}
 ```
-
-This site was built using [GitHub Pages](https://pages.github.com/).
 
 
