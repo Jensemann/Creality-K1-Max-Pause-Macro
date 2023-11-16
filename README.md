@@ -172,3 +172,27 @@ gcode:
 
 # Sample STL + GCODE
 
+[Sample STL](pause_sample_creality_print.stl)
+
+[GCODE file with M0](pause_sample_creality_print.gcode)
+
+# Sample Code Snippet
+
+Code:
+
+...
+G0 F600 X146.425 Y146.425 Z5.2
+G0 F30000 X146.116 Y146.116
+;TIME_ELAPSED:142.903324
+
+M0 Click to continue
+
+;LAYER:25
+M204 S894
+SET_VELOCITY_LIMIT ACCEL_TO_DECEL=447
+;TYPE:WALL-INNER
+...
+
+
+
+
