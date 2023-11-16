@@ -15,53 +15,66 @@ A pause command can be used before test start of a new layer of a given print, f
 While i write this instructions, creality print will not insert gcode to PAUSE a print, neither [M0](https://marlinfw.org/docs/gcode/M000-M001.html) nor [M600](https://marlinfw.org/docs/gcode/M600.html), even if the [software has such a function in place](https://www.reddit.com/r/crealityk1/comments/143svlm/anyone_try_out_filament_change_with_creality_print/?rdt=53952).
 
 ## How to insert PAUSE in a print
+
 ### Slicer
 Cura is able to insert the correct gcode.
-Prusa Slicer, too (untested)
+Prusa Slicer, too (untested).
 
 ### Prusa Tool
+This tool will insert a M600 command:
 [Prusa Color Print](https://blog.prusa3d.com/color-print_3993)
 
 ### Manual GCODE edit
-open your gcode file using a text editor. i recommend to use Notepad++.
+Open your gcode file using a text editor. i recommend to use Notepad++.
 search for gcode "layer", and find the right layer number where you want to add the pause.
 
-insert:
+Insert this:
 ...
 M0
 ...
-
-save gcode and upload the file to your printer.
+and save gcode and upload the file to your printer.
 
 ## Requirements
-- A Creality K1 / K1 Max
-- Firmware with Root enabled. If you dont knoiw how to do it, please check This site was built using [Installation Helper Script for Creality K1 Series](https://github.com/Guilouz/Creality-K1-and-K1-Max).
-- Mainsail installed. It might work with Fluidd, however, i did it with Mainsail.
+You need
+- A Creality K1 / K1 Max :-)
+- K1 / K1Max firmware with root enabled. If you dont know how to do it, please check this site how to get prepared: [Installation Helper Script for Creality K1 Series](https://github.com/Guilouz/Creality-K1-and-K1-Max).
+- Mainsail installed. It should work with Fluidd - however, i did test it with Mainsail UI.
 
 # Installation
+
 ## Access Printer UI
 
 Access your printer's [web interface](https://github.com/Guilouz/Creality-K1-and-K1-Max/wiki/Access-to-Web-Interface)
-To access to the original Mainsail Web Interface, just use your printer's IP address with port 4409 in your Web browser such as: http://xxx.xxx.xxx.xxx:4409/ (replacing xxx.xxx.xxx.xxx by your local IP address).
+To access the Mainsail Web Interface, just use your printer's IP address with port 4409 in your Web browser such as: http://xxx.xxx.xxx.xxx:4409/ (replacing xxx.xxx.xxx.xxx by your local IP address).
 
 ![Screenshot of a Mainsail UI](mainsail_ui.png)
 
 ## Open printer.cfg
+
 Select System:
 
 ![Screenshot of a Mainsail UI](Mainsail_machine.png)
 
+
+## Edit printer.cfg
+
 Open printer.cfg by clicking on it:
 ![Screenshot of a Mainsail UI](mainsail_printer.cfg.png)
 
-Go to the very end of your printer.cfg, untill you find this code:
+WARNING: Be careful with your printer.cfg. Consider making a copy of you current version and dowload it to your client, so you can go back anytime.
+The mainsail ui will do that for you upon saving a new file version, too. You will find copies of older versions in the same folder.
+
+Go to the very end of your printer.cfg, until you find similar code like this:
 ![Screenshot of a Mainsail UI](mainsail_printer.cfg2.png)
 
 ## Add Macro Code
 
-Scroll to the end of the file, untill you find this:
+Now, add the macro code block (see below) above the line <--- SAFE_CONFIG ---> :
+
 
 ```
+> paste PAUSE Macro CODE here <
+
 #*# <---------------------- SAVE_CONFIG ---------------------->
 #*# DO NOT EDIT THIS BLOCK OR BELOW. The contents are auto-generated.
 #*#
