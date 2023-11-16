@@ -37,7 +37,7 @@ and save gcode and upload the file to your printer.
 ## Requirements
 You need
 - A Creality K1 / K1 Max :-)
-- K1 / K1Max firmware with root enabled. If you dont know how to do it, please check this site how to get prepared: [Installation Helper Script for Creality K1 Series](https://github.com/Guilouz/Creality-K1-and-K1-Max).
+- K1 / K1Max firmware installed, with root account enabled. If you dont know how to do it, please check this site how to get prepared: [Installation Helper Script for Creality K1 Series](https://github.com/Guilouz/Creality-K1-and-K1-Max).
 - Mainsail installed. It should work with Fluidd - however, i did test it with Mainsail UI.
 
 # Installation
