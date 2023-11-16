@@ -13,7 +13,18 @@ this repository will describe, how to implement the required macros for the Crea
 
 Access your printer's [web interface](https://github.com/Guilouz/Creality-K1-and-K1-Max/wiki/Access-to-Web-Interface)
 To access to the original Mainsail Web Interface, just use your printer's IP address with port 4409 in your Web browser such as: http://xxx.xxx.xxx.xxx:4409/ (replacing xxx.xxx.xxx.xxx by your local IP address).
-Go to the very end of your printer.cfg.
+
+![Screenshot of a Mainsail UI](mainsail_ui.png)
+
+Select System:
+
+![Screenshot of a Mainsail UI](Mainsail_machine.png)
+
+Open printer.cfg by clicking on it:
+![Screenshot of a Mainsail UI](mainsail_printer.cfg.png)
+
+Go to the very end of your printer.cfg, untill you find this code:
+![Screenshot of a Mainsail UI](mainsail_printer.cfg2.png)
 
 Find this section:
 ...
