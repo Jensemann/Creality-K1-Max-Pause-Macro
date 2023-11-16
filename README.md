@@ -9,13 +9,15 @@ this repository will describe, how to implement the required macros for the Crea
 - Firmware with Root enabled. If you dont knoiw how to do it, please check This site was built using [Installation Helper Script for Creality K1 Series](https://github.com/Guilouz/Creality-K1-and-K1-Max).
 - Mainsail installed. It might work with Fluidd, however, i did it with Mainsail.
 
-## Installation
+# Installation
+## Access Printer UI
 
 Access your printer's [web interface](https://github.com/Guilouz/Creality-K1-and-K1-Max/wiki/Access-to-Web-Interface)
 To access to the original Mainsail Web Interface, just use your printer's IP address with port 4409 in your Web browser such as: http://xxx.xxx.xxx.xxx:4409/ (replacing xxx.xxx.xxx.xxx by your local IP address).
 
 ![Screenshot of a Mainsail UI](mainsail_ui.png)
 
+## Open printer.cfg
 Select System:
 
 ![Screenshot of a Mainsail UI](Mainsail_machine.png)
@@ -26,8 +28,11 @@ Open printer.cfg by clicking on it:
 Go to the very end of your printer.cfg, untill you find this code:
 ![Screenshot of a Mainsail UI](mainsail_printer.cfg2.png)
 
-Find this section:
-...
+## Add Macro Code
+
+Scroll to the end of the file, untill you find this:
+
+```
 #*# <---------------------- SAVE_CONFIG ---------------------->
 #*# DO NOT EDIT THIS BLOCK OR BELOW. The contents are auto-generated.
 #*#
@@ -37,11 +42,10 @@ Find this section:
 #*# shaper_type_x = zv
 #*# shaper_freq_x = 47.4
 #*#
-...
+```
 
-add the following code BEFORE the section 
 
-MACRO code:
+MACRO code to be inserted before SAVE_CONFIG:
 ```
 ### ------------------------------------------ PAUSE START -----------------------------------
 
