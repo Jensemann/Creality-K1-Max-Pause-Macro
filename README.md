@@ -1,4 +1,4 @@
-# Creality-K1-Max-Pause-Macro
+# Implementation of PAUSE / RESUME Macro for Creality K1 Max using M0 / M600 gcode commands
 
 ## Purpose
 This instrution will describe how to implement the required macros for the Creality K1 / K1 Max printers to be able to PAUSE and RESUME a print from GCODE, or from the Klipper UI like Mainsail.
