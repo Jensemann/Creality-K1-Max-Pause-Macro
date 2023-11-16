@@ -22,8 +22,11 @@ While i write this instructions, creality print will not insert gcode to PAUSE a
 
 ## How to insert PAUSE in a print
 ### Slicer
+Cura is able to insert the correct gcode.
+Prusa Slicer, too (untested)
 
 ### Prusa Tool
+[Prusa Color Print](https://blog.prusa3d.com/color-print_3993)
 
 ### Manual GCODE edit
 open your gcode file using a text editor. i recommend to use Notepad++.
@@ -167,4 +170,5 @@ gcode:
   RESUME_BASE {get_params}
 ```
 
+# Sample STL + GCODE
 
