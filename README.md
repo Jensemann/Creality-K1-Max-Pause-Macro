@@ -59,40 +59,13 @@ Select Machine Menu (left side, last entry):
 ![Screenshot of a Mainsail UI](Mainsail_machine.png)
 
 
-## Edit printer.cfg
-
-Open printer.cfg by clicking on it:
-
-![Screenshot of a Mainsail UI](mainsail_printer.cfg.png)
+## Edit gcode_macro.cfg
 
 WARNING: Be careful with your printer.cfg. Consider making a copy of you current version and dowload it to your client, so you can go back anytime.
 The mainsail ui will do that for you upon saving a new file version, too. You will find copies of older versions in the same folder.
 
-Go to the very end of your printer.cfg, until you find similar code like this:
+Add the macro code block (see below) at the very end of you file:
 
-![Screenshot of a Mainsail UI](mainsail_printer.cfg2.png)
-
-## Add Macro Code
-
-Now, add the macro code block (see below) above the line <--- SAFE_CONFIG ---> :
-
-
-```
-> paste PAUSE Macro CODE here <
-
-#*# <---------------------- SAVE_CONFIG ---------------------->
-#*# DO NOT EDIT THIS BLOCK OR BELOW. The contents are auto-generated.
-#*#
-#*# [input_shaper]
-#*# shaper_type_y = zv
-#*# shaper_freq_y = 43.2
-#*# shaper_type_x = zv
-#*# shaper_freq_x = 47.4
-#*#
-```
-
-
-MACRO code to be inserted before SAVE_CONFIG:
 ```
 ### ------------------------------------------ PAUSE MACROS START -----------------------------------
 
@@ -122,8 +95,8 @@ gcode:
     {% else %}
         M118 Timeout Reached - Heaters and Motors Still On!
         M117 Timeout Reached - Heaters and Motors Still On!
-        #TURN_OFF_HEATERS
-        #M84
+        TURN_OFF_HEATERS
+        M84
     {% endif %}
 
 
